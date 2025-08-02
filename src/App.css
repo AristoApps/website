@@ -1,0 +1,577 @@
+/* Reset and base styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior-y: none;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: #1a1a1a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: white;
+  scroll-behavior: smooth; /* Enable native smooth scrolling */
+
+  ::-webkit-scrollbar {
+    display: none; /* Hides the entire scrollbar */
+  }
+
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+}
+
+/* Glass Header */
+.glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  height: 10%;
+
+  /* text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); */
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* .nav-links a:hover {
+  color: #61dafb;
+} */
+
+/* .nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #61dafb;
+  transition: width 0.3s ease;
+} */
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.galaxy-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: black;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, #61dafb, #764abc);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(97, 218, 251, 0.4);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(97, 218, 251, 0.6);
+}
+
+/* Content Sections */
+.content-section {
+  /* padding: 5rem 2rem; */
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  min-height: 50vh;
+  
+}
+
+/* HeroScroll Section */
+.hero-scroll-section {
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+  background-color: black;
+  position: relative;
+}
+
+.content-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.content-section h2::after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  bottom: -10px;
+  left: 0;
+  background: linear-gradient(90deg, #61dafb, transparent);
+}
+
+/* HeroScroll specific styles */
+.content-section img {
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+  /* margin: 2rem 0; */
+  
+}
+
+
+
+.encrypted-text{
+  font-size: clamp(4px, 14vw, 8rem);
+  font-family: "Julius Sans One", sans-serif;
+  font-weight: 300;
+  /* color: #fff; */
+  margin: 0;
+  padding: 0;
+  /* Apply the gradient */
+  background-image: linear-gradient(to bottom right, #ffffff, #5d5d5d); /* Example colors: a vibrant orange-pink to a softer peach */
+  
+  /* Clip the background to the text content */
+  -webkit-background-clip: text; /* For WebKit browsers (Safari, Chrome) */
+  background-clip: text;
+  
+  /* Make the text color transparent so the gradient is visible */
+  color: transparent;
+  
+  /* margin-top: 1.5rem; */
+}
+.encrypted-subtext{
+  font-size: clamp(40px, 13.5vw, 8rem);
+  font-family:"Montserrat", sans-serif; 
+  font-weight: 200;
+  justify-content: center;
+  /* display: flex; */
+  /* color: #fff; */
+  margin-top: 0;
+  padding: 0;
+  /* Apply the gradient */
+  background: linear-gradient(to bottom right, #ffffff, #d41010); /* Example colors: a vibrant orange-pink to a softer peach */
+  
+  /* Clip the background to the text content */
+  -webkit-background-clip: text; /* For WebKit browsers (Safari, Chrome) */
+  background-clip: text;
+
+  
+  /* Make the text color transparent so the gradient is visible */
+  color: #ffffff;
+  /* margin-top: 1.5rem; */
+}
+.precision-text{
+  font-size: clamp(40px, 13.5vw, 8rem);
+  font-family:"Montserrat", sans-serif; 
+  font-weight: 200;
+  justify-content: center;
+  display: block;
+  align-items: center;
+
+  /* display: flex;  Uncomment if you want it to behave like a flex container */
+  margin-top: 0;
+  /* margin-left: -35px; */
+  padding: 0;
+
+  color: #ffffff;
+
+  /* Apply the gradient */
+  background: linear-gradient(to bottom right, #ffffff, #5d5d5d); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  /* color: transparent; Make the text color transparent so the gradient is visible */
+
+  /* --- Initial Text Shadow (Subtle or None) --- */
+  /* You can start with a very subtle shadow or no shadow at all */
+   /* Very subtle white shadow */
+
+  /* --- Add a smooth transition for the glow effect --- */
+}
+.precision-text:hover {
+  /* display: inline-flex;  */
+  text-shadow:none;    /* You can add more shadows for a stronger, more layered glow */
+  
+}
+.intro-section {
+  font-size: clamp(4px, 5.0vw, 3rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+
+  text-align: center; /* This will center all text content within this element */
+  max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+  margin-left: auto; /* Optional: Center the block itself if max-width is used */
+  margin-right: auto; /* Optional: Center the block itself if max-width is used */
+}
+
+.intro-section-h1 {
+  font-size: clamp(4px, 5.0vw, 4rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: center; /* This will center all text content within this h1 element */
+  
+  max-width: 1000px; /* Optional: Constrain width for better readability */
+  margin-left: auto; /* Optional: Center the h1 block itself */
+  margin-right: auto; /* Optional: Center the h1 block itself */
+}
+@media (width< 728px ){
+  .precision-text{
+    font-size: clamp(40px, 13.5vw, 8rem);
+    font-weight: 200;
+    justify-content: center;
+    display: block;
+    align-items: center;
+  
+    /* display: flex;  Uncomment if you want it to behave like a flex container */
+    margin-top: 0;
+    margin-left: 10px;
+    padding: 0;
+  
+    /* color: #ffffff; */
+  
+    /* Apply the gradient */
+    background: linear-gradient(to bottom right, #ffffff, #9a8c8c); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    /* color: transparent;  */
+  
+    /* --- Initial Text Shadow (Subtle or None) --- */
+    /* You can start with a very subtle shadow or no shadow at all */
+     /* Very subtle white shadow */
+  
+    /* --- Add a smooth transition for the glow effect --- */
+  }
+  .precision-text:hover {
+    /* display: inline-flex;  */
+    text-shadow:none;    /* You can add more shadows for a stronger, more layered glow */
+  }
+  .intro-section {
+    font-size: clamp(4px, 5.5vw, 8rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 00;
+    
+    text-align: center; /* This will center all text content within this element */
+    max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+    margin-left: 15px; /* Optional: Center the block itself if max-width is used */
+    margin-right: 15px; /* Optional: Center the block itself if max-width is used */
+  }
+  
+  .intro-section-h1 {
+    font-size: clamp(4px, 5.5vw, 8rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-align: center; /* This will center all text content within this h1 element */
+    max-width: 1000px; /* Optional: Constrain width for better readability */
+    margin-left: 5px; /* Optional: Center the h1 block itself */
+    margin-right: 5px; /* Optional: Center the h1 block itself */
+  }
+}
+@media (min-width: 1024px) { /* Adjust this breakpoint (e.g., 1024px) if desired */
+  .precision-text {
+    /* Re-apply desktop-specific display properties for precise hover area */
+    display: inline-flex; /* Makes the element shrink-wrap its content */
+    justify-content: center; /* Centers BlurText inside .precision-text */
+    align-items: center;   /* Aligns vertically if needed */
+
+    /* Re-apply the gradient for desktop */
+    background: linear-gradient(to bottom right, #ffffff, #5d5d5d); 
+    -webkit-background-clip: text; 
+    background-clip: text;
+    color: transparent; /* Makes the gradient visible again for desktop */
+    
+    /* Re-apply the initial text shadow (subtle glow) for desktop */
+    text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.7), /* Bright white glow */
+
+    0 0 20px rgba(255, 255, 255, 0.4), /* Wider, softer white glow */
+    
+    0 0 30px rgba(255, 255, 255, 0.2);
+    
+    /* Re-apply the transition for desktop */
+    transition: text-shadow 0.6s ease-in-out; 
+  }
+
+  /* --- Desktop Hover Effect: Make it Glow --- */
+  .precision-text:hover {
+    text-shadow: 0 0 0px rgb(255, 255, 255);
+
+  }
+}
+.glass-element {
+  /* --- Base Appearance (matching your current CSS) --- */
+  /* 1. Transparent background with some color */
+  /* Figma's effect typically implies a very subtle background for the glass itself */
+  background: rgba(255, 255, 255, 0.0); /* Slightly increased from 0.0 for a subtle base */
+
+  /* 4. Rounded corners (from your existing CSS) */
+  border-radius: 10px; /* Keep as is unless Figma has a different value here */
+
+  /* 3. Border for depth (from your existing CSS) */
+  /* For a more subtle, internal highlight (often linked to light angle) */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Slightly more transparent border */
+
+
+  /* --- Mimicking Figma's Optical/Light Settings --- */
+
+  /* Frost: 0 implies minimal frost, so a low blur is good. Your current blur is 1px.
+     However, for a noticeable glass effect, blur needs to be higher than 1px.
+     Let's assume a "frost: 0" in Figma means a clear, strong blur without haziness.
+     If you really want *minimal* blur like 1px, the effect will be almost unnoticeable.
+     The Safari prefix was `10px` but the main `backdrop-filter` was `1px`.
+     Let's unify this to 10px or more for a visible effect. */
+  backdrop-filter: blur(10px) brightness(0.8); /* Adjusted to 10px for visibility and 80% brightness from Figma */
+  -webkit-backdrop-filter: blur(10px) brightness(0.8); /* For Safari support */
+
+
+  /* Light: Brightness: 80% (already applied via brightness filter above)
+     Light Angle: -45 degree (simulated via directional box-shadow)
+     Depth: 42 (simulated via box-shadow spread and blur) */
+/* Subtle top-left highlight (from -45 deg angle) */
+    /* You could also add a very subtle bottom-right dark shadow if desired */
+    /* 5px 5px 10px rgba(0, 0, 0, 0.05); */
+
+
+  /* --- Other Layout Styles --- */
+  padding: 20px; /* Keep as is */
+  /* Add any necessary width, height, position, etc. for your layout */
+}
+
+.responsive-image {
+  /* padding-top: 10px; */
+  max-width: 40px; /* Ensures the image doesn't overflow its container */
+  height: 40px;    /* Maintains aspect ratio when scaling */
+  display: block;  /* Removes extra space below the image, common with inline elements */
+   /* Centers the image and adds vertical space */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Optional: adds a subtle shadow
+}
+
+.nav-font{
+  font-family: "Julius Sans One", sans-serif;
+}
+
+.graient-text {
+  display: inline-block; /* Makes the element flow like text but allows box model properties */
+  /* You might already have a font-size/font-weight/font-family set here or inherited,
+     ensure they match the surrounding h1 text for visual consistency. */
+  vertical-align: middle; /* Helps align the text within the line, especially with effects */
+}
+.about-section{
+  font-size: clamp(4px,5.5vw, 8rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  
+  text-align: center; /* This will center all text content within this element */
+  max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+  margin-left: auto; /* Optional: Center the block itself if max-width is used */
+  margin-right: auto;
+}
+.about-section-h2{
+  font-size: clamp(4px, 4.5vw, 8rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  
+  text-align: center; /* This will center all text content within this element */
+  max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+  margin-left: auto; /* Optional: Center the block itself if max-width is used */
+  margin-right: auto;
+}
+.about-section-p{
+  font-size: clamp(4px, 4.5vw, 3rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  margin-top: -10px;
+  text-align: center; /* This will center all text content within this element */
+  max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+  margin-left: auto; /* Optional: Center the block itself if max-width is used */
+  margin-right: auto;
+}
+.pixel-card-container {
+  display: flex; /* Makes the children (PixelCards) arrange in a row */
+  flex-wrap: wrap; /* Allows cards to wrap to the next line on smaller screens */
+  justify-content: center; /* Centers the cards horizontally within the container */
+  gap: 20px; /* Adds space between the cards */
+
+  /* Optional: Add some padding to the container if needed */
+  padding: 20px;
+}
+.shiny-icons{
+  height: clamp(4px, 5vw, 3rem);
+  margin-top: 10px;
+  /* width: 40px; */
+
+}
+.responsive-card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to a new line if needed */
+  justify-content: center;
+  align-items: center;
+  gap: 2rem; /* Adds consistent spacing between cards */
+}
+
+.getintouch-section{
+  font-size: clamp(4px,5.5vw, 8rem);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  
+  text-align: center; /* This will center all text content within this element */
+  max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+  margin-left: auto; /* Optional: Center the block itself if max-width is used */
+  margin-right: auto;
+}
+/* This is the media query for smaller screens */
+
+@media (max-width: 768px) {
+  .responsive-card-container {
+    flex-direction: column;
+  }
+}
+@media (width< 728px ){
+  .about-section{
+    font-size: clamp(4px, 6.5vw, 8rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    
+    text-align: center; /* This will center all text content within this element */
+    max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+    margin-left: auto; /* Optional: Center the block itself if max-width is used */
+    margin-right: auto;
+  }
+  .getintouch-section{
+    font-size: clamp(4px, 9.5vw, 8rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    
+    text-align: center; /* This will center all text content within this element */
+    max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+    margin-left: auto; /* Optional: Center the block itself if max-width is used */
+    margin-right: auto;
+  }
+  .about-section-h2{
+    font-size: clamp(4px, 5.5vw, 6rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    
+    text-align: center; /* This will center all text content within this element */
+    max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+    margin-left: auto; /* Optional: Center the block itself if max-width is used */
+    margin-right: auto;
+  }
+  .about-section-p{
+    font-size: clamp(4px, 5.5vw, 6rem);
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    
+    text-align: center; /* This will center all text content within this element */
+    max-width: 1000px; /* Optional: Constrain width for better readability on very wide screens */
+    margin-left: 5px; /* Optional: Center the block itself if max-width is used */
+    margin-right: 5px;
+  }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .glass-header {
+    display: none; /* Hide header on mobile as requested */
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  
+  .content-section {
+    /* padding: 3rem 1.5rem; */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+  }
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s !important;
+}
