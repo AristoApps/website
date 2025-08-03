@@ -1035,7 +1035,7 @@ function App() {
       >
         <p className="about-section-p">
           <TextType
-            text={["Apps are the future.", "Let's build your's beautifully."]}
+            text={["Apps are the future.", "Let's build yours beautifully."]}
             typingSpeed={45}
             pauseDuration={1500}
             showCursor={true}
