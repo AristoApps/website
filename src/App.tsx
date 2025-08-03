@@ -243,7 +243,7 @@ function App() {
                 delay={0.3}
               >
                 <img
-                  src="/website/reactshine.png" // Path starts from the root (public folder)
+                  src="/website/public/reactshine.png" // Path starts from the root (public folder)
                   alt="A description of my awesome photo" // IMPORTANT for accessibility and SEO
                   className="shiny-icons"
                 />
@@ -285,7 +285,7 @@ function App() {
                 delay={0.3}
               >
                 <img
-                  src="/website/supashine.png" // Path starts from the root (public folder)
+                  src="/website/public/supashine.png" // Path starts from the root (public folder)
                   alt="A description of my awesome photo" // IMPORTANT for accessibility and SEO
                   className="shiny-icons"
                 />
@@ -327,7 +327,7 @@ function App() {
                 delay={0.3}
               >
                 <img
-                  src="/website/figmashine.png" // Path starts from the root (public folder)
+                  src="/website/public/figmashine.png" // Path starts from the root (public folder)
                   alt="A description of my awesome photo" // IMPORTANT for accessibility and SEO
                   className="shiny-icons"
                 />
@@ -369,7 +369,7 @@ function App() {
                 delay={0.3}
               >
                 <img
-                  src="/website/postshine.png" // Path starts from the root (public folder)
+                  src="/website/public/postshine.png" // Path starts from the root (public folder)
                   alt="A description of my awesome photo" // IMPORTANT for accessibility and SEO
                   className="shiny-icons"
                 />
