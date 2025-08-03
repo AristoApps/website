@@ -416,7 +416,7 @@ html, body {
   display: block;  /* Removes extra space below the image, common with inline elements */
    /* Centers the image and adds vertical space */
 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Optional: adds a subtle shadow
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .nav-font{
@@ -493,6 +493,58 @@ html, body {
   margin-right: auto;
 }
 /* This is the media query for smaller screens */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  /* max-width: 300px; */
+  width: clamp(14px, 83vw, 36rem);
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: clamp(14px, 80vw, 35rem);
+  padding: 0.75rem 0rem;
+  padding-left: 1rem;
+
+  border-radius: 8px;
+  border: 0.05px solid #333333;
+  font-size: 1rem;
+  background-color: transparent;
+  font-weight: 200;
+  color: white;
+  outline: none;
+  font-family: Montserrat;
+  transition: border-color 0.2s;
+  caret-color: white;
+  
+}
+
+.input::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.button {
+  padding: 0.75rem 0.2rem;
+  background-color: transparent;
+  color: white;
+  font-size: 1.4em;
+  border: 0.05px solid #333333;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 200;
+  transition: all 0.2s ease;
+  font-family: Montserrat;
+  
+}
 
 @media (max-width: 768px) {
   .responsive-card-container {
@@ -555,9 +607,6 @@ html, body {
     font-size: 1.2rem;
   }
   
-  .content-section {
-    /* padding: 3rem 1.5rem; */
-  }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {

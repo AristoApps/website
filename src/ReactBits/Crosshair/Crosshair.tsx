@@ -20,7 +20,7 @@ const getMousePos = (
 
 interface CrosshairProps {
   color?: string;
-  containerRef?: RefObject<HTMLElement>;
+  containerRef?: RefObject<HTMLElement | null>; // Allow null in the RefObject
 }
 
 const Crosshair: React.FC<CrosshairProps> = ({

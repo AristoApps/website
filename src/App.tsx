@@ -4,7 +4,7 @@ import Galaxy from "./ReactBits/Galaxy/Galaxy";
 import { initSmoothScrolling } from "./components/smoothScroll";
 import BlurText from "./ReactBits/BlurText/BlurText";
 import AnimatedContent from "./ReactBits/AnimatedContent/AnimatedContent";
-import useDelayedRender from "./hooks/delay.ts";
+// import useDelayedRender from "./hooks/delay.ts";
 import ShinyText from "./ReactBits/ShinyText/ShinyText.tsx";
 import Crosshair from "./ReactBits/Crosshair/Crosshair.tsx";
 import GradientText from "./ReactBits/GradientText/GradientText.tsx";
@@ -23,54 +23,6 @@ const handleAnimationComplete = () => {
 };
 
 function ContactForm() {
-  const styles = {
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "1.5rem",
-      // maxWidth: "300px",
-      width: "clamp(14px, 80vw, 35rem)",
-      margin: "0 auto",
-      padding: 0,
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-    },
-    fieldContainer: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    input: {
-      padding: "0.75rem 1rem",
-      borderRadius: "8px",
-      border: "0.05px solid #333333",
-
-      fontSize: "1rem",
-
-      backgroundColor: "transparent",
-      fontWeight: "200",
-      color: "white",
-      outline: "none",
-      fontFamily: "Montserrat",
-      transition: "border-color 0.2s",
-      caretColor: "white",
-      "::placeholder": {
-        color: "white",
-        opacity: 0.8,
-      },
-    },
-    button: {
-      padding: "0.75rem 0.2rem",
-      backgroundColor: "transparent",
-      color: "white",
-      fontSize: "1.4em",
-      border: "0.05px solid #333333",
-      borderRadius: "8px",
-      cursor: "pointer",
-      fontWeight: "200",
-      transition: "all 0.2s ease",
-      fontFamily: "Montserrat",
-    },
-  };
-
   const [state, handleSubmit] = useForm("xpwljlqo");
   if (state.succeeded) {
     return (
@@ -85,36 +37,37 @@ function ContactForm() {
     );
   }
   return (
-    <form onSubmit={handleSubmit} style={styles.form}>
-      <div style={styles.fieldContainer}>
+    <form onSubmit={handleSubmit} className="form">
+      <div className="fieldContainer">
         <input
           id="name"
           type="text"
           name="text"
           placeholder="Name"
-          style={styles.input}
+          className="input"
         />
 
         <ValidationError prefix="Text" field="text" errors={state.errors} />
       </div>
 
-      <div style={styles.fieldContainer}>
+      <div className="fieldContainer">
         <input
           id="email"
           type="email"
           name="email"
           placeholder="Email Address"
-          style={styles.input}
+          className="input"
         />
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
 
-      <div style={styles.fieldContainer}>
+      <div className="fieldContainer">
         <textarea
           id="message"
           name="message"
           placeholder="Message (optional)"
-          style={{ ...styles.input, height: "120px", resize: "vertical" }}
+          className="input"
+          style={{ height: "120px", resize: "vertical" }}
         />
         <ValidationError
           prefix="Message"
@@ -123,7 +76,7 @@ function ContactForm() {
         />
       </div>
 
-      <button type="submit" disabled={state.submitting} style={styles.button}>
+      <button type="submit" disabled={state.submitting} className="button">
         <ShinyText text="Send" disabled={false} speed={3} />
       </button>
     </form>
@@ -142,34 +95,36 @@ function App() {
     });
   };
 
-  const showSubtext = useDelayedRender(2000); // 2000ms = 2 seconds delay
-  const aboutSectionRef = useRef(null); // <--- NEW: Ref for the About section
+  // const showSubtext = useDelayedRender(2000); // 2000ms = 2 seconds delay
+  const aboutSectionRef = useRef<HTMLDivElement>(null);
   const [isDesktop, setIsDesktop] = useState(
     window.innerWidth >= DESKTOP_BREAKPOINT
   ); // <--- NEW STATE
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   message: "",
+  // });
 
   // Handle changes to the input fields.
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-  };
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevState) => ({
+  //     ...prevState,
+  //     [name]: value,
+  //   }));
+  // };
 
   // Handle form submission. This is a placeholder function.
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // You would typically send the data to an API here.
-    alert("Form Submitted! Check the console for the data.");
-    setFormData({ name: "", email: "", message: "" });
-  };
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted:", formData);
+  //   // You would typically send the data to an API here.
+  //   alert("Form Submitted! Check the console for the data.");
+  //   setFormData({ name: "", email: "", message: "" });
+  // };
   useEffect(() => {
     // Initialize smooth scrolling
     initSmoothScrolling();

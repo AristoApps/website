@@ -1,6 +1,12 @@
 "use client";
 
-import { ElementType, useEffect, useRef, useState, createElement } from "react";
+import {
+  type ElementType,
+  useEffect,
+  useRef,
+  useState,
+  createElement,
+} from "react";
 import { gsap } from "gsap";
 import "./TextType.css";
 
@@ -191,7 +197,9 @@ const TextType = ({
     showCursor && (
       <span
         ref={cursorRef}
-        className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? "text-type__cursor--hidden" : ""}`}
+        className={`text-type__cursor ${cursorClassName} ${
+          shouldHideCursor ? "text-type__cursor--hidden" : ""
+        }`}
       >
         {cursorCharacter}
       </span>
